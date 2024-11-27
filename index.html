@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISPOA - Sistema de Venta Agrícola</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-screen">
+        <h1>SISPOA</h1>
+        <h2>SISTEMA DE VENTA AGRÍCOLA</h2>
+        <form id="login-form" onsubmit="login(event)">
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+
+    <div id="menu-screen" style="display: none;">
+        <header>
+            <h2>Bienvenido a SISPOA</h2>
+            <button id="logout-btn" onclick="logout()">Cerrar Sesión</button>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showTable('venta')">VENTA</a></li>
+                <li><a href="#" onclick="showTable('anulacion')">ANULACION</a></li>
+                <li><a href="#" onclick="showTable('cierre')">CIERRE</a></li>
+                <li><a href="#" onclick="showTable('configuracion')">CONFIGURACION</a></li>
+                <li><a href="#" onclick="showTable('proveedor')">PROVEEDOR</a></li>
+                <li><a href="#" onclick="showTable('inventario')">INVENTARIO</a></li>
+            </ul>
+        </nav>
+
+        <div id="table-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
