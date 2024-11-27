@@ -7,36 +7,89 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Pantalla de ingreso -->
     <div id="login-screen">
         <h1>SISPOA</h1>
         <h2>SISTEMA DE VENTA AGRÍCOLA</h2>
-        <form id="login-form" onsubmit="login(event)">
+        <form id="login-form">
             <input type="text" id="username" placeholder="Usuario" required>
             <input type="password" id="password" placeholder="Contraseña" required>
             <button type="submit">Ingresar</button>
         </form>
     </div>
 
-    <div id="menu-screen" style="display: none;">
+    <!-- Pantalla del menú (después de ingresar) -->
+    <div id="menu-screen" style="display:none;">
         <header>
-            <h2>Bienvenido a SISPOA</h2>
-            <button id="logout-btn" onclick="logout()">Cerrar Sesión</button>
+            <h2>SISPOA - MENÚ PRINCIPAL</h2>
         </header>
-
         <nav>
             <ul>
-                <li><a href="#" onclick="showTable('venta')">VENTA</a></li>
-                <li><a href="#" onclick="showTable('anulacion')">ANULACION</a></li>
-                <li><a href="#" onclick="showTable('cierre')">CIERRE</a></li>
-                <li><a href="#" onclick="showTable('configuracion')">CONFIGURACION</a></li>
-                <li><a href="#" onclick="showTable('proveedor')">PROVEEDOR</a></li>
-                <li><a href="#" onclick="showTable('inventario')">INVENTARIO</a></li>
+                <li><a href="#" id="venta-btn">VENTA</a></li>
+                <li><a href="#" id="anulacion-btn">ANULACIÓN</a></li>
+                <li><a href="#" id="cierre-btn">CIERRE</a></li>
+                <li><a href="#" id="configuracion-btn">CONFIGURACIÓN</a></li>
+                <li><a href="#" id="proveedor-btn">PROVEEDOR</a></li>
+                <li><a href="#" id="inventario-btn">INVENTARIO</a></li>
             </ul>
         </nav>
 
-        <div id="table-container"></div>
+        <div id="table-container">
+            <!-- Tablas de los módulos -->
+            <div id="venta-table" class="module-table" style="display: none;">
+                <h3>Tabla de Ventas</h3>
+                <table>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                    </tr>
+                    <tr>
+                        <td>01/11/2024</td>
+                        <td>Tomates</td>
+                        <td>50</td>
+                        <td>$10.00</td>
+                    </tr>
+                    <tr>
+                        <td>02/11/2024</td>
+                        <td>Papas</td>
+                        <td>30</td>
+                        <td>$15.00</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="anulacion-table" class="module-table" style="display: none;">
+                <h3>Tabla de Anulaciones</h3>
+                <table>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Motivo</th>
+                    </tr>
+                    <tr>
+                        <td>01/11/2024</td>
+                        <td>Tomates</td>
+                        <td>10</td>
+                        <td>Devolución</td>
+                    </tr>
+                    <tr>
+                        <td>02/11/2024</td>
+                        <td>Papas</td>
+                        <td>5</td>
+                        <td>Cancelado por cliente</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Añadir más tablas para los otros módulos de forma similar -->
+
+        </div>
+
+        <button id="logout-btn" style="display: none;">Cerrar Sesión</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
